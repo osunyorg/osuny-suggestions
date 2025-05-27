@@ -1,0 +1,41 @@
+#search
+    &.is-opened
+        display: flex
+        flex-direction: column
+    .pagefind-ui
+        &__search-input
+            position: sticky
+            top: 0
+            @include h3
+        &__results-area
+            padding-top: $spacing-5
+    .suggestions
+        margin-top: space(12)
+        margin-left: var(--grid-gutter-negative)
+        margin-right: var(--grid-gutter-negative)
+        order: 3
+        &__title
+            @include h3
+            margin-bottom: pxToRem(30)
+        &__tabs
+            display: flex
+            gap: $spacing-2
+            button
+                &::after
+                    content: '->'
+                &[aria-selected="true"]
+                    background: white
+        &__content
+            padding-top: pxToRem(30)
+            .block.block-title
+                display: none !important
+    @include media-breakpoint-down(desktop)
+        padding-top: $spacing-4
+        .pagefind-ui
+            &__form
+                &::after
+                    top: $spacing-5
+            &__search-input,
+            &__search-message
+                left: auto
+                right: auto

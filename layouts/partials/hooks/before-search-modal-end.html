@@ -1,0 +1,26 @@
+{{ $suggestion_page := site.GetPage "pages/suggestion" }}
+{{ with $suggestion_page }}
+  <div class="suggestions">
+    <div class="container">
+      <div class="suggestions__title">
+        <h2 id="suggestions-title">{{ .Params.header_text }}</h2>
+      </div>
+      <div class="suggestions__tabs" role="tablist"  aria-labelledby="suggestions-title">
+        {{ range (where .Params.contents "template" "title") -}}
+          <button class="button button--small"
+                  id="tab-collapse-{{- .slug -}}"
+                  role="tab" 
+                  aria-selected="false"
+                  aria-controls="collapse-{{ .slug }}">
+                  {{ partial "PrepareHTML" .title }}
+          </button>
+        {{- end -}}
+      </div>
+    </div>
+    <div class="suggestions__content">
+      {{- if .Params.contents }}
+        {{- partial "contents/list.html" . -}}
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
