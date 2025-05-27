@@ -34,3 +34,9 @@ Dans `assets/sass/main.sass` :
 @import "_theme/hugo-osuny"
 @import "osuny-suggestions"
 ```
+
+## Usage
+
+Dans Osuny, créer une page "Suggestions" avec le slug "suggestions". Créer des blocs de titre avec une mise en forme "Replié" afin de créer des onglets dans la modale de recherche. Tous les blocs sous le titre replié seront affichés au moment où l'utilisateur clique sur un des tags.
+
+
