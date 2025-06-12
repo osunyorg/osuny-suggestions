@@ -26,6 +26,10 @@
                 display: none !important
     @include media-breakpoint-down(desktop)
         padding-top: $spacing-4
+        .pagefind-ui::before
+            display: none
+        .suggestions
+            margin-top: 0
         .pagefind-ui
             &__form
                 &::after
