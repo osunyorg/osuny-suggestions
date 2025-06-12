@@ -2,13 +2,6 @@
     &.is-opened
         display: flex
         flex-direction: column
-    .pagefind-ui
-        &__search-input
-            position: sticky
-            top: 0
-            @include h3
-        &__results-area
-            padding-top: $spacing-5
     .suggestions
         margin-top: space(12)
         margin-left: var(--grid-gutter-negative)
@@ -24,6 +17,23 @@
             padding-top: pxToRem(30)
             .block.block-title
                 display: none !important
+    .pagefind-ui
+        &__results-area
+            ol
+                padding-left: 0
+        &__search-input
+            position: sticky
+            top: 0
+            @include h3
+    @include media-breakpoint-up(desktop)
+        .search__close
+            right: grid-external-space()
+        .pagefind-ui
+            width: var(--grid-width)
+            margin-left: auto
+            margin-right: auto
+            &__results-area
+                padding-top: $spacing-5
     @include media-breakpoint-down(desktop)
         padding-top: $spacing-4
         .pagefind-ui::before
