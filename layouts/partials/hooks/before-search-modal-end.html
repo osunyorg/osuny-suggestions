@@ -18,10 +18,11 @@
           {{- end -}}
         </div>
       </div>
-      <div class="suggestions__content">
-        {{- if .Params.contents }}
-          {{- partial "contents/list.html" . -}}
-        {{ end }}
+      <div class="suggestions__content contents-full-width">
+        {{ partial "contents/list.html" (dict 
+          "context" .
+          "contents" .Params.contents
+        ) }}
       </div>
     </div>
   {{ end }}
